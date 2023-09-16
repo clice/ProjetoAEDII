@@ -1,1 +1,2 @@
-# ProjetoAED2
+# ProjetoAEDII
+Projeto de Implementação de Algoritmos e Estrutura de Dados II
