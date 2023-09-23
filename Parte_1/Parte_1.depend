@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1695509006 source:c:\users\clice\projects\projetoaedii\parte_1\passageiro.c
+	"passageiro.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
+1695509068 c:\users\clice\projects\projetoaedii\parte_1\passageiro.h
+
