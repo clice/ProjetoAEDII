@@ -1,2 +1,2 @@
-# ProjetoAEDII
-Projeto de Implementação de Algoritmos e Estrutura de Dados II
+# Projeto de Implementação da Disciplina Algoritmos e Estrutura de Dados II
+
