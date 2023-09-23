@@ -1,8 +1,16 @@
-#include "heap.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "Filadefoguetes.h"
+#include "heap.h"
+#define F_esq(i) (2*i+1)
+#define F_dir(i) (2*i+2)
+#define PAI(i)
+#define swap(a,b) {Nave tmp=*a; *a=*b ;*b=tmp;}
 
-// FUNÇÃO PARA CRIAR O HEAP
+
+
+
+// FUNï¿½ï¿½O PARA CRIAR O HEAP
 struct Heap *criarHeap(int capacidade)
 {
     struct Heap *heap = (struct Heap *)malloc(sizeof(struct Heap));
@@ -12,7 +20,7 @@ struct Heap *criarHeap(int capacidade)
     return heap;
 }
 
-// FUNÇÃO PARA IMPRIMIR O HEAP
+// FUNï¿½ï¿½O PARA IMPRIMIR O HEAP
 void imprimirHeap(struct Heap *heap)
 {
     for (int i = 0; i < heap->tamanho; i++) {
@@ -22,7 +30,7 @@ void imprimirHeap(struct Heap *heap)
     printf("\n");
 }
 
-// FUNÇÃO AUXILIAR DE TROCA DE ELEMENTOS DE POSIÇÃO
+// FUNï¿½ï¿½O AUXILIAR DE TROCA DE ELEMENTOS DE POSIï¿½ï¿½O
 void troca(int *a, int *b)
 {
     int aux = *a;
@@ -30,13 +38,13 @@ void troca(int *a, int *b)
     *b = aux;
 }
 
-// FUNÇÃO PARA INSERIR INFORMAÇÕES NO HEAP
+// FUNï¿½ï¿½O PARA INSERIR INFORMAï¿½ï¿½ES NO HEAP
 void inserir(struct Heap *heap, int valor)
 {
     int index;
 
     if (heap->tamanho == heap->capacidade) {
-        printf("O Heap esta cheio. Nao eh possível inserir outros elementos.\n");
+        printf("O Heap esta cheio. Nao eh possï¿½vel inserir outros elementos.\n");
         return;
     }
 
@@ -50,7 +58,7 @@ void inserir(struct Heap *heap, int valor)
     }
 }
 
-// FUNÇÃO PARA ORGANIZAR O HEAP COM AS PRIORIDADES
+// FUNï¿½ï¿½O PARA ORGANIZAR O HEAP COM AS PRIORIDADES
 void heapify(struct Heap *heap, int index)
 {
     int maior = index;

@@ -42,6 +42,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="heap.h" />
+<<<<<<< HEAD:Parte_1/Parte_1.cbp
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -55,5 +56,10 @@
 		</Unit>
 		<Unit filename="passageiro.h" />
 		<Extensions />
+=======
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+>>>>>>> 5e58219ebf4b90778ed2ccdbbc0b5aeef4336d4a:Parte_1/Aed2.cbp
 	</Project>
 </CodeBlocks_project_file>
