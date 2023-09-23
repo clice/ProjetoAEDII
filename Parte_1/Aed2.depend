@@ -1,13 +1,21 @@
 # depslib dependency file v1.0
-1695345510 source:c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2-1-2\projetoaedii\parte_1\aed21.c
+1695501688 source:c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2\aed21.c
 	<stdio.h>
 	<stdlib.h>
 	"Filadefoguetes.h"
 
-1695345073 c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2-1-2\projetoaedii\parte_1\filadefoguetes.h
+1695501192 c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2\filadefoguetes.h
 
-1695345288 source:c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2-1-2\projetoaedii\parte_1\gerenciador.c
+1695501678 source:c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2\gerenciador.c
 	<stdio.h>
 	<stdlib.h>
 	"Filadefoguetes.h"
+
+1695501195 source:c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2\heap.c
+	<stdio.h>
+	<stdlib.h>
+	"Filadefoguetes.h"
+	"heap.h"
+
+1695501195 c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2\heap.h
 

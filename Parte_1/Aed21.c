@@ -4,29 +4,26 @@
 
 
 
-
 int main(){
-   int n, i;
-   printf("Digite o tamanho da fila \n");
-   scanf("%d", &n);
-   Fila* fila= fila_criar(n);
-   for (i=0; i<n; i++){
+    int n,i;
+    printf("Digite o tamanho da fila que desejas criar\n");
+    scanf("%d",&n);
+    heap *heap= heap_criar(n);
+    for(i=0;i<n;i++){
         Nave nav;
-        printf("Digite a prioridade da nave \n");
-        scanf("%d", &nav.chave);
-        printf("Digite o nome da nave \n");
-        scanf("%s", nav.nome);
+        printf("digita a prioridade \n ");
+        scanf("%d",&nav.chave);
+        printf("Digite o nome da nave");
+        scanf("%s",&nav.nome);
+        adicionar_nave(heap,nav);
+    }
+    printf("Fila");
+    while(!heap_vazia(heap)){
+        Nave nav= entrar_no_portal(heap);
+        printf("%d, %s \n",nav.chave,nav.nome);
 
-        adicionar_nave(fila, nav);
-
-   }
-   while(!Fila_vazia(fila)){
-        Nave nav= entrar_no_portal(fila);
-        printf("%d %s \n",nav.chave,nav.nome);
-   }
-   destruir_fila(&fila);
-
-
+    }
+    destruir_heap(heap);
 
 
 

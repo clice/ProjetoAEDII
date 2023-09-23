@@ -38,6 +38,10 @@
 		<Unit filename="gerenciador.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="heap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="heap.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

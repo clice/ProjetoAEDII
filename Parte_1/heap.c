@@ -1,23 +1,10 @@
-#include "heap.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "Filadefoguetes.h"
+#include "heap.h"
+#define F_esq(i) (2*i+1)
+#define F_dir(i) (2*i+2)
+#define PAI(i)
+#define swap(a,b) {Nave tmp=*a; *a=*b ;*b=tmp;}
 
-// FUNÇÃO PARA CRIAR O HEAP
-struct Heap *criarHeap(int capacidade) {
-    struct Heap *heap = (struct Heap *) malloc(sizeof(struct Heap));
-    heap->arr = (int *) malloc(capacidade * sizeof(int));
-    heap->tamanho = 0;
-    heap->capacidade = capacidade;
-    return heap;
-}
 
-// FUNÇÃO PARA IMPRIMIR O HEAP
-void imprimirHeap(struct Heap *heap) {
-    printf("Heap: ");
-
-    for (int i = 0; i < heap->tamanho; i++) {
-        print("%d ", heap->arr[i]);
-    }
-
-    printf("\n");
-}
