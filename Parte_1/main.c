@@ -5,60 +5,6 @@
 #include <string.h>
 #include <time.h>
 
-// int main() {
-//     struct MaxHeap *heap = criarHeap(10);
-
-//     inserir(heap, 10);
-//     printf("Max Heap after insertion:\n");
-//     imprimirHeap(heap);
-//     inserir(heap, 20);
-//     printf("Max Heap after insertion:\n");
-//     imprimirHeap(heap);
-//     inserir(heap, 15);
-//     printf("Max Heap after insertion:\n");
-//     imprimirHeap(heap);
-//     inserir(heap, 40);
-//     printf("Max Heap after insertion:\n");
-//     imprimirHeap(heap);
-//     inserir(heap, 50);
-//     printf("Max Heap after insertion:\n");
-//     imprimirHeap(heap);
-//     inserir(heap, 30);
-
-//     printf("Max Heap after insertion:\n");
-//     imprimirHeap(heap);
-
-//     return 0;
-// }
-
-// int main() {
-//     int numero;
-//     FILE *arquivo;
-//     char nomeArquivo[] = "numeros.txt"; // Substitua pelo nome do seu arquivo
-//     struct Heap *heap = criarHeap(10);
-
-//     // Abre o arquivo em modo de leitura
-//     arquivo = fopen(nomeArquivo, "r");
-
-//     // Verifica se o arquivo foi aberto com sucesso
-//     if (arquivo == NULL) {
-//         printf("Não foi possível abrir o arquivo %s.\n", nomeArquivo);
-//         return 1;
-//     }
-
-//     // Lê os números do arquivo e os imprime na tela
-//     while (fscanf(arquivo, "%d", &numero) != EOF) {
-//         printf("Inserir: %d\n", numero);
-//         inserir(heap, numero);
-//         imprimirHeap(heap);
-//     }
-
-//     // Fecha o arquivo após a leitura
-//     fclose(arquivo);
-
-//     return 0;
-// }
-
 // FUNÇÃO PARA ADICIONAR UM PASSAGEIRO A LISTA
 struct Passageiro *adicionarPassageiro(struct Passageiro *cabeca, int id) {
     struct Passageiro *novoPassageiro = (struct Passageiro *)malloc(sizeof(struct Passageiro));
@@ -68,7 +14,7 @@ struct Passageiro *adicionarPassageiro(struct Passageiro *cabeca, int id) {
         exit(1);
     }
 
-    novoPassageiro->id = id; // Usando um ID aleatório como exemplo
+    novoPassageiro->id = rand(); // Usando um ID aleatório como exemplo
     strcpy(novoPassageiro->nome, escolherNomeAleatorio()); // Nome aleatório da lista
     novoPassageiro->idade = escolherIdadeAleatoria(); // Idade aleatória entre 1 e 100
     strcpy(novoPassageiro->planeta, escolherPlanetaAleatorio()); // Planeta de origem aleatório da lista
@@ -97,8 +43,6 @@ int main() {
     struct Passageiro *listaPassageiros = NULL; // Inicialmente, a lista está vazia
 
     srand(time(NULL)); // Inicializa o gerador de números aleatórios
-
-    printf("Quantidade de passageiros: %d\n", qtdPassageiros);
 
     for (i = 0; i < qtdPassageiros; i++) {
         // Adicionando passageiros à lista

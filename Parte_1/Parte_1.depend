@@ -6,5 +6,17 @@
 	<string.h>
 	<time.h>
 
-1695509068 c:\users\clice\projects\projetoaedii\parte_1\passageiro.h
+1695511158 c:\users\clice\projects\projetoaedii\parte_1\passageiro.h
+
+1695509137 source:c:\users\clice\projects\projetoaedii\parte_1\main.c
+	"passageiro.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
+1695512074 source:c:\users\clice\projects\projetoaedii\parte_1\nave.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
 
