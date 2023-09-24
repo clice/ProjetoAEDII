@@ -3,9 +3,12 @@
 
 // ESTRUTURA PARA O HEAP
 struct Heap {
-    int tamanho;        // O tamanho atual do Heap (número total de elementos no Heap)
-    int capacidade;     // A capacidade máxima do Heap (número máximo de elementos no Heap)
-    struct Nave *naves; // Um ponteiro para o array de naves
+    int tamanho;        // O tamanho atual do Heap (nï¿½mero total de elementos no Heap)
+    int capacidade;     // A capacidade mï¿½xima do Heap (nï¿½mero mï¿½ximo de elementos no Heap)
+    struct Nave *naves; // Lista de naves
 };
+
+struct Heap *criarEspaconave(int capacidade);
+void trocarEspaconaves(struct Nave *a, struct Nave *b);
 
 #endif // HEAP_H

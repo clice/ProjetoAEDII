@@ -15,5 +15,8 @@ int escolherQtdPassageirosAleatoria();
 char *escolherNomeAleatorio();
 int escolherIdadeAleatoria();
 char *escolherPlanetaAleatorio();
+struct Passageiro *adicionarPassageiro(struct Passageiro *cabeca, int id);
+void imprimirPassageiros(struct Passageiro *cabeca);
+int inicializarPassageiros();
 
 #endif // PASSAGEIRO_H

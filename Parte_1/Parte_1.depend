@@ -1,21 +1,46 @@
 # depslib dependency file v1.0
-1695509006 source:c:\users\clice\projects\projetoaedii\parte_1\passageiro.c
+1695583916 source:c:\users\clice\projects\projetoaedii\parte_1\passageiro.c
 	"passageiro.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
 
-1695511158 c:\users\clice\projects\projetoaedii\parte_1\passageiro.h
+1695583921 c:\users\clice\projects\projetoaedii\parte_1\passageiro.h
 
-1695509137 source:c:\users\clice\projects\projetoaedii\parte_1\main.c
+1695583386 source:c:\users\clice\projects\projetoaedii\parte_1\main.c
+	"menu.h"
+	"heap.h"
+	"nave.h"
 	"passageiro.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
 
-1695512074 source:c:\users\clice\projects\projetoaedii\parte_1\nave.c
+1695582416 source:c:\users\clice\projects\projetoaedii\parte_1\nave.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1695582287 source:c:\users\clice\projects\projetoaedii\parte_1\test.c
+
+1695582382 source:c:\users\clice\projects\projetoaedii\parte_1\heap.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"heap.h"
+	"nave.h"
+
+1695582325 c:\users\clice\projects\projetoaedii\parte_1\heap.h
+
+1695582265 c:\users\clice\projects\projetoaedii\parte_1\nave.h
+
+1695583288 c:\users\clice\projects\projetoaedii\parte_1\menu.h
+
+1695583938 source:c:\users\clice\projects\projetoaedii\parte_1\menu.c
+	"menu.h"
+	"passageiro.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
