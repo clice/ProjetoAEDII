@@ -8,7 +8,7 @@ struct Passageiro
     char nome[15];              // Nome do passageiro
     int idade;                  // Idade do passageiro
     char planeta[15];           // Planeta de origem do passageiro
-    struct Passageiro *prox;    // Ponteiro para o próximo passageiro na lista
+    struct Passageiro *prox;    // Ponteiro para o próximo passageiro
 };
 
 int escolherQtdPassageirosAleatoria();

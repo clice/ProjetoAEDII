@@ -34,13 +34,13 @@
 // }
 
 // Função para criar uma nova espaçonave
-struct Espaconave *criarEspaconave(int prioridade, int qtdPassageiros, int qtdRecursos, struct Passageiro *passageiro)
+struct Espaconave *criarEspaconave(int prioridade, int qtdPassageiros, int qtdRecursos, struct Passageiro *passageiro, struct Recurso *recursos)
 {
     struct Espaconave *nave = (struct Espaconave *)malloc(sizeof(struct Espaconave)); // Aloca memória para o Heap de espaçonaves
     nave->prioridade = prioridade; // Define a prioridade da espaçonave
     nave->qtdPassageiros = qtdPassageiros; // Define a quantidade de passageiros na espaçonave
     nave->qtdRecursos = qtdRecursos; // Define a quantidade de recursos na espaçonave
     nave->passageiros = (struct Passageiro *)malloc(qtdPassageiros * sizeof(struct Passageiro)); // Aloca memória para os passageiros
-    // nave->recursos = (struct Recurso *)malloc(qtdRecursos * sizeof(struct Recurso)); // Aloca memória para os recursos 
+    nave->recursos = (struct Recurso *)malloc(qtdRecursos * sizeof(struct Recurso)); // Aloca memória para os recursos 
     return nave;
 }

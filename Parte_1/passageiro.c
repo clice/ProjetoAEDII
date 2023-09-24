@@ -1,8 +1,9 @@
-#include "passageiro.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+
+#include "passageiro.h"
 
 // FUNÇÃO PARA ESCOLHER A QUANTIDADE DE PASSAGEIROS DA NAVE
 int escolherQtdPassageirosAleatoria()
