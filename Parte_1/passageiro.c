@@ -5,15 +5,8 @@
 
 #include "passageiro.h"
 
-// FUNÇÃO PARA ESCOLHER A QUANTIDADE DE PASSAGEIROS DA NAVE
-int escolherQtdPassageirosAleatoria()
-{
-	int qtdAleatoria = (rand() % 20) + 1; // Gera um número aleatório para a quantidade de passageiros
-	return qtdAleatoria;
-}
-
 // FUNÇÃO PARA ESCOLHER UM NOME ALEATÓRIO PARA UM PASSAGEIRO
-char *escolherNomeAleatorio()
+char *gerarNome()
 {
     // Lista de nomes de passageiros
     char *nomes[] = {
@@ -28,14 +21,13 @@ char *escolherNomeAleatorio()
 }
 
 // FUNÇÃO PARA ESCOLHER UMA IDADE ALEATÓRIA PARA UM PASSAGEIRO
-int escolherIdadeAleatoria()
+int gerarIdade()
 {
-    int idadeAleatoria = (rand() % 100) + 1; // Gera um número aleatório para a idade do passageiro
-    return idadeAleatoria;
+    return (rand() % 100) + 1; // Gera um número aleatório para a idade do passageiro
 }
 
 // FUNÇÃO PARA ESCOLHER UM NOME DE PLANETA ALEATÓRIA PARA O PASSAGEIRO
-char *escolherPlanetaAleatorio()
+char *gerarPlaneta()
 {
     // Lista de nomes de planetas
     char *planetas[] = {
@@ -49,10 +41,14 @@ char *escolherPlanetaAleatorio()
     return planetas[indice];
 }
 
-
+// FUNÇÃO PARA ESCOLHER A QUANTIDADE DE PASSAGEIROS DA NAVE
+int gerarQtdPassageiros()
+{
+	return (rand() % 20) + 1; // Gera um número aleatório para a quantidade de passageiros
+}
 
 // FUNÇÃO PARA ADICIONAR UM PASSAGEIRO A LISTA
-struct Passageiro *adicionarPassageiro(struct Passageiro *cabeca, int id) 
+struct Passageiro *adicionarPassageiro(struct Passageiro *cabeca, int id)
 {
     struct Passageiro *novoPassageiro = (struct Passageiro *)malloc(sizeof(struct Passageiro));
 
@@ -62,9 +58,9 @@ struct Passageiro *adicionarPassageiro(struct Passageiro *cabeca, int id)
     }
 
     novoPassageiro->id = rand(); // Usando um ID aleatório como exemplo
-    strcpy(novoPassageiro->nome, escolherNomeAleatorio()); // Nome aleatório da lista
-    novoPassageiro->idade = escolherIdadeAleatoria(); // Idade aleatória entre 1 e 100
-    strcpy(novoPassageiro->planeta, escolherPlanetaAleatorio()); // Planeta de origem aleatório da lista
+    strcpy(novoPassageiro->nome, gerarNome()); // Nome aleatório da lista
+    novoPassageiro->idade = gerarIdade(); // Idade aleatória entre 1 e 100
+    strcpy(novoPassageiro->planeta, gerarPlaneta()); // Planeta de origem aleatório da lista
 
     novoPassageiro->prox = cabeca; // O próximo passageiro na lista é a cabeça atual
     return novoPassageiro; // O novo passageiro se torna a nova cabeça da lista
@@ -88,7 +84,7 @@ void imprimirPassageiros(struct Passageiro *cabeca)
 
 int inicializarPassageiros()
 {
-    int i = 0, qtdPassageiros = escolherQtdPassageirosAleatoria();
+    int i = 0, qtdPassageiros = gerarQtdPassageiros();
     struct Passageiro *listaPassageiros = NULL; // Inicialmente, a lista está vazia
 
     srand(time(NULL)); // Inicializa o gerador de números aleatórios
