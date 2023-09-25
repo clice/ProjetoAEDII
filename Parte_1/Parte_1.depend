@@ -8,9 +8,9 @@
 
 1695587316 c:\users\clice\projects\projetoaedii\parte_1\passageiro.h
 
-1695600115 source:c:\users\clice\projects\projetoaedii\parte_1\main.c
+1695649635 source:c:\users\clice\projects\projetoaedii\parte_1\main.c
+	"menu.h"
 	<stdio.h>
-	<stdlib.h>
 
 1695582416 source:c:\users\clice\projects\projetoaedii\parte_1\nave.c
 	<stdio.h>
@@ -19,15 +19,15 @@
 
 1695582287 source:c:\users\clice\projects\projetoaedii\parte_1\test.c
 
-1695587752 source:c:\users\clice\projects\projetoaedii\parte_1\heap.c
+1695658928 source:c:\users\clice\projects\projetoaedii\parte_1\heap.c
 
-1695598875 c:\users\clice\projects\projetoaedii\parte_1\heap.h
+1695648330 c:\users\clice\projects\projetoaedii\parte_1\heap.h
 
 1695582265 c:\users\clice\projects\projetoaedii\parte_1\nave.h
 
 1695583288 c:\users\clice\projects\projetoaedii\parte_1\menu.h
 
-1695600157 source:c:\users\clice\projects\projetoaedii\parte_1\menu.c
+1695659138 source:c:\users\clice\projects\projetoaedii\parte_1\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -43,14 +43,14 @@
 
 1695587337 c:\users\clice\projects\projetoaedii\parte_1\recurso.h
 
-1695600693 c:\users\clice\projects\projetoaedii\parte_1\espaconave.h
+1695659535 c:\users\clice\projects\projetoaedii\parte_1\espaconave.h
 
-1695600127 source:c:\users\clice\projects\projetoaedii\parte_1\espaconave.c
+1695659115 source:c:\users\clice\projects\projetoaedii\parte_1\espaconave.c
+
+1695648688 source:c:\users\clice\projects\projetoaedii\parte_1\aed21.c
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
-	"heap.h"
-	"espaconave.h"
-	"passageiro.h"
-	"recurso.h"
+	"Filadefoguetes.h"
+
+1695648613 c:\users\clice\projects\projetoaedii\parte_1\filadefoguetes.h
 

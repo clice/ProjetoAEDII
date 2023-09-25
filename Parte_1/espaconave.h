@@ -11,7 +11,20 @@ struct Espaconave
     struct Recurso *recursos;            // Lista de recursos
 };
 
+// ESTRUTURA PARA O HEAP
+struct Heap
+{
+    int tamanho;         // O tamanho atual do Heap (número total de elementos no Heap)
+    int capacidade;      // A capacidade máxima do Heap (número máximo de elementos no Heap)
+    struct Espaconave *naves;  // Lista de naves
+};
+
+struct Heap *criarHeap(int capacidade);
 struct Espaconave *criarEspaconave(int prioridade, int qtdPassageiros, int qtdRecursos);
-void trocarEspaconaves(struct Espaconave **a, struct Espaconave **b);
+void trocarEspaconaves(struct Espaconave *a, struct Espaconave *b);
+void organizarHeap(struct Heap *heap, int index);
+void inserirEspaconave(struct Heap *heap, struct Espaconave *nave, int prioridade, int qtdPassageiros, int qtdRecursos);
+struct Espaconave *removerEspaconave(struct Heap *heap);
+void imprimirHeap(struct Heap *heap);
 
 #endif // ESPACONAVE_H
