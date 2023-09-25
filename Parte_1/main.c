@@ -40,7 +40,7 @@ void inicializarSistema()
             case 1:
                 heap = arquivoEspaconaves();
                 if (heap == NULL) break;
-                else gerenciamentoEspaconaves(heap);
+                else gerenciarHeap(heap);
                 break;
 
             default:

@@ -51,8 +51,8 @@ void imprimirHeap(struct Heap *heap)
     }
 }
 
-// FUNÇÃO PARA GERENCIAMENTO DO HEAP
-void gerenciamentoEspaconaves(struct Heap *heap)
+// FUNÇÃO PARA GERENCIAR DO HEAP
+void gerenciarHeap(struct Heap *heap)
 {
     int opcao, prioridade;
 
