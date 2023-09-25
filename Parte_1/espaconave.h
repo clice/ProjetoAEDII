@@ -11,7 +11,7 @@ struct Espaconave
     struct Recurso *recursos;            // Lista de recursos
 };
 
-void arquivoEspaconaves();
-struct Espaconave *criarEspaconave(int prioridade, int qtdPassageiros, int qtdRecursos, struct Passageiro *passageiros);
+struct Espaconave *criarEspaconave(int prioridade, int qtdPassageiros, int qtdRecursos);
+void trocarEspaconaves(struct Espaconave **a, struct Espaconave **b);
 
 #endif // ESPACONAVE_H

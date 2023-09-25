@@ -10,7 +10,7 @@ char *escolherNomeRecursoAleatorio()
 {
     // Lista de nomes de recursos
     char *nomesRecursos[] = {
-        "Água", "B", "C", "D", "E", "F", "G", "H", "I", "J",
+        "Água", "B", "Carvao", "D", "E", "F", "G", "H", "I", "J",
         "K", "L", "M", "N", "Ouro", "Petróleo", "Q", "R", "S", "T",
         "U", "V", "W", "X", "Y", "Z"
     };
