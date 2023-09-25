@@ -5,7 +5,7 @@
 
 #include "passageiro.h"
 
-// FUNÇÃO PARA ESCOLHER UM NOME ALEATÓRIO PARA UM PASSAGEIRO
+// FUNÇÃO PARA GERAR UM NOME ALEATÓRIO PARA UM PASSAGEIRO
 char *gerarNome()
 {
     // Lista de nomes de passageiros
@@ -20,13 +20,13 @@ char *gerarNome()
     return nomes[indice];
 }
 
-// FUNÇÃO PARA ESCOLHER UMA IDADE ALEATÓRIA PARA UM PASSAGEIRO
+// FUNÇÃO PARA GERAR UMA IDADE ALEATÓRIA PARA UM PASSAGEIRO
 int gerarIdade()
 {
     return (rand() % 100) + 1; // Gera um número aleatório para a idade do passageiro
 }
 
-// FUNÇÃO PARA ESCOLHER UM NOME DE PLANETA ALEATÓRIA PARA O PASSAGEIRO
+// FUNÇÃO PARA GERAR UM NOME DE PLANETA ALEATÓRIA PARA O PASSAGEIRO
 char *gerarPlaneta()
 {
     // Lista de nomes de planetas
@@ -41,7 +41,7 @@ char *gerarPlaneta()
     return planetas[indice];
 }
 
-// FUNÇÃO PARA ESCOLHER A QUANTIDADE DE PASSAGEIROS DA NAVE
+// FUNÇÃO PARA GERAR A QUANTIDADE DE PASSAGEIROS DA NAVE
 int gerarQtdPassageiros()
 {
 	return (rand() % 20) + 1; // Gera um número aleatório para a quantidade de passageiros
@@ -82,6 +82,7 @@ void imprimirPassageiros(struct Passageiro *cabeca)
     }
 }
 
+// 
 int inicializarPassageiros()
 {
     int i = 0, qtdPassageiros = gerarQtdPassageiros();

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1695665168 source:c:\users\clice\projects\projetoaedii\parte_1\passageiro.c
+1695670808 source:c:\users\clice\projects\projetoaedii\parte_1\passageiro.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -34,16 +34,16 @@
 	"menu.h"
 	"espaconave.h"
 
-1695597477 source:c:\users\clice\projects\projetoaedii\parte_1\recurso.c
+1695671007 source:c:\users\clice\projects\projetoaedii\parte_1\recurso.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
 	"recurso.h"
 
-1695587337 c:\users\clice\projects\projetoaedii\parte_1\recurso.h
+1695670904 c:\users\clice\projects\projetoaedii\parte_1\recurso.h
 
-1695665648 c:\users\clice\projects\projetoaedii\parte_1\espaconave.h
+1695671127 c:\users\clice\projects\projetoaedii\parte_1\espaconave.h
 
 1695665304 source:c:\users\clice\projects\projetoaedii\parte_1\espaconave.c
 	<stdio.h>

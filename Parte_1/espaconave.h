@@ -27,6 +27,7 @@ struct Espaconave *criarEspaconave(int prioridade, int qtdPassageiros, int qtdRe
 void trocarEspaconaves(struct Espaconave **a, struct Espaconave **b);
 void inserirEspaconave(struct Heap *heap, int prioridade, int qtdPassageiros, int qtdRecursos);
 struct Espaconave *removerEspaconave(struct Heap *heap);
-void arquivoEspaconaves();
+int arquivoEspaconaves();
+int imagemEspaconave();
 
 #endif // ESPACONAVE_H
