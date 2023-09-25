@@ -49,7 +49,44 @@ void imprimirHeap(struct Heap *heap)
         printf("Qtd de Recursos: %d\n", heap->naves[i]->qtdRecursos);
         printf("\n");
     }
-    printf("\n");
+}
+
+// FUNÇÃO PARA GERENCIAMENTO DO HEAP
+void gerenciamentoEspaconaves(struct Heap *heap)
+{
+    int opcao, prioridade;
+
+    while(1) {
+        printf("-----------------------------------------------------------------------\n\n");
+        printf("GERENCIAMENTO DA FILA DE ESPACONAVES\n\n");
+        printf("ESCOLHA UMA DAS OPCOES:\n");
+        printf("1 - Adicionar um nova espaconave\n");
+        printf("2 - Remover uma espaconave\n");
+        printf("3 - Imprimir informacoes das espaconaves\n\n");
+        printf("Informe a opcao: ");
+        scanf("%d", &opcao);
+        printf("\n");
+
+        // Switch do menu
+        switch (opcao) {
+            case 1:
+                printf("Informe a prioridade da nave: ");
+                scanf("%d", &prioridade);
+                inserirEspaconave(heap, prioridade, gerarQtdPassageiros(), gerarQtdRecursos());
+                break;
+
+            case 2:
+                removerEspaconave(heap);
+                break;
+
+            case 3:
+                imprimirHeap(heap);
+                break;
+
+            default:
+                break;
+        }
+    }
 }
 
 ////////// FUNÇÕES DAS ESPAÇONAVES
@@ -120,30 +157,35 @@ struct Espaconave *removerEspaconave(struct Heap *heap)
 }
 
 // FUNÇÃO PARA LER O ARQUIVO COM AS INFORMAÇÕES INICIAIS DAS ESPACONAVES
-int arquivoEspaconaves()
+struct Heap *arquivoEspaconaves()
 {
     int prioridade;
     struct Heap *heap = criarHeap(100);
 
+    printf("-----------------------------------------------------------------------\n\n");
     printf("LENDO O ARQUIVO DA LISTA DE ESPACONAVES...\n\n");
+
     // Abre o arquivo em modo de leitura
     FILE *arquivo = fopen("espaconaves.txt", "r");
 
     // Verifica se o arquivo foi aberto com sucesso
     if (arquivo == NULL) {
         printf("Nao foi possivel abrir o arquivo %s.\n", "naves.txt");
-        return 1;
+        printf("-----------------------------------------------------------------------\n\n");
+        return NULL;
+    } else {
+        // Lê os números do arquivo e os imprime na tela
+        while (fscanf(arquivo, "%d", &prioridade) != EOF) {
+            inserirEspaconave(heap, prioridade, gerarQtdPassageiros(), gerarQtdRecursos());
+        }
+
+        // Fecha o arquivo após a leitura
+        fclose(arquivo);
+
+        printf("ARQUIVO LIDO COM SUCESSO! Lista de espaconaves adicionada e organizada.\n\n");
+
+        return heap;
     }
-
-    // Lê os números do arquivo e os imprime na tela
-    while (fscanf(arquivo, "%d", &prioridade) != EOF) {
-        inserirEspaconave(heap, prioridade, gerarQtdPassageiros(), gerarQtdRecursos());
-    }
-
-    // Fecha o arquivo após a leitura
-    fclose(arquivo);
-
-    return 0;
 }
 
 // FUNÇÃO PARA IMPRIMIR A IMAGEM DE UM FOGUETE

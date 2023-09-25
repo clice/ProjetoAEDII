@@ -8,9 +8,10 @@
 
 1695665039 c:\users\clice\projects\projetoaedii\parte_1\passageiro.h
 
-1695649635 source:c:\users\clice\projects\projetoaedii\parte_1\main.c
-	"menu.h"
+1695673661 source:c:\users\clice\projects\projetoaedii\parte_1\main.c
 	<stdio.h>
+	<stdlib.h>
+	"espaconave.h"
 
 1695582416 source:c:\users\clice\projects\projetoaedii\parte_1\nave.c
 	<stdio.h>
@@ -25,9 +26,9 @@
 
 1695582265 c:\users\clice\projects\projetoaedii\parte_1\nave.h
 
-1695583288 c:\users\clice\projects\projetoaedii\parte_1\menu.h
+1695673332 c:\users\clice\projects\projetoaedii\parte_1\menu.h
 
-1695659138 source:c:\users\clice\projects\projetoaedii\parte_1\menu.c
+1695672547 source:c:\users\clice\projects\projetoaedii\parte_1\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -43,14 +44,16 @@
 
 1695670904 c:\users\clice\projects\projetoaedii\parte_1\recurso.h
 
-1695671127 c:\users\clice\projects\projetoaedii\parte_1\espaconave.h
+1695673726 c:\users\clice\projects\projetoaedii\parte_1\espaconave.h
 
-1695665304 source:c:\users\clice\projects\projetoaedii\parte_1\espaconave.c
+1695673352 source:c:\users\clice\projects\projetoaedii\parte_1\espaconave.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<time.h>
 	"espaconave.h"
 	"passageiro.h"
+	"recurso.h"
 
 1695648688 source:c:\users\clice\projects\projetoaedii\parte_1\aed21.c
 	<stdio.h>
