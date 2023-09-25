@@ -8,6 +8,8 @@ struct Recurso
     struct Recurso *prox; // Ponteiro para o próximo recurso
 };
 
-char *escolherNomeRecursoAleatorio();
+int gerarQtdRecursos();
+char *gerarNomeRecurso();
+int inicializarRecursos();
 
 #endif // RECURSO_H

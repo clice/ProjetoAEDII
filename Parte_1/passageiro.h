@@ -11,10 +11,10 @@ struct Passageiro
     struct Passageiro *prox;    // Ponteiro para o próximo passageiro
 };
 
-int escolherQtdPassageirosAleatoria();
-char *escolherNomeAleatorio();
-int escolherIdadeAleatoria();
-char *escolherPlanetaAleatorio();
+char *gerarNome();
+int gerarIdade();
+char *gerarPlaneta();
+int gerarQtdPassageiros();
 struct Passageiro *adicionarPassageiro(struct Passageiro *cabeca, int id);
 void imprimirPassageiros(struct Passageiro *cabeca);
 int inicializarPassageiros();

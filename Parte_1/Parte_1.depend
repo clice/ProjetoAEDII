@@ -1,22 +1,17 @@
 # depslib dependency file v1.0
-1695583916 source:c:\users\clice\projects\projetoaedii\parte_1\passageiro.c
-	"passageiro.h"
+1695670808 source:c:\users\clice\projects\projetoaedii\parte_1\passageiro.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
-
-1695583921 c:\users\clice\projects\projetoaedii\parte_1\passageiro.h
-
-1695583386 source:c:\users\clice\projects\projetoaedii\parte_1\main.c
-	"menu.h"
-	"heap.h"
-	"nave.h"
 	"passageiro.h"
+
+1695665039 c:\users\clice\projects\projetoaedii\parte_1\passageiro.h
+
+1695673661 source:c:\users\clice\projects\projetoaedii\parte_1\main.c
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
-	<time.h>
+	"espaconave.h"
 
 1695582416 source:c:\users\clice\projects\projetoaedii\parte_1\nave.c
 	<stdio.h>
@@ -25,23 +20,45 @@
 
 1695582287 source:c:\users\clice\projects\projetoaedii\parte_1\test.c
 
-1695582382 source:c:\users\clice\projects\projetoaedii\parte_1\heap.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"heap.h"
-	"nave.h"
+1695658928 source:c:\users\clice\projects\projetoaedii\parte_1\heap.c
 
-1695582325 c:\users\clice\projects\projetoaedii\parte_1\heap.h
+1695648330 c:\users\clice\projects\projetoaedii\parte_1\heap.h
 
 1695582265 c:\users\clice\projects\projetoaedii\parte_1\nave.h
 
-1695583288 c:\users\clice\projects\projetoaedii\parte_1\menu.h
+1695673332 c:\users\clice\projects\projetoaedii\parte_1\menu.h
 
-1695583938 source:c:\users\clice\projects\projetoaedii\parte_1\menu.c
-	"menu.h"
-	"passageiro.h"
+1695672547 source:c:\users\clice\projects\projetoaedii\parte_1\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"menu.h"
+	"espaconave.h"
+
+1695671007 source:c:\users\clice\projects\projetoaedii\parte_1\recurso.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"recurso.h"
+
+1695670904 c:\users\clice\projects\projetoaedii\parte_1\recurso.h
+
+1695673726 c:\users\clice\projects\projetoaedii\parte_1\espaconave.h
+
+1695673352 source:c:\users\clice\projects\projetoaedii\parte_1\espaconave.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"espaconave.h"
+	"passageiro.h"
+	"recurso.h"
+
+1695648688 source:c:\users\clice\projects\projetoaedii\parte_1\aed21.c
+	<stdio.h>
+	<stdlib.h>
+	"Filadefoguetes.h"
+
+1695648613 c:\users\clice\projects\projetoaedii\parte_1\filadefoguetes.h
 
