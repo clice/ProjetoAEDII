@@ -62,3 +62,39 @@
 
 1695648613 c:\users\clice\projects\projetoaedii\parte_1\filadefoguetes.h
 
+1696182307 source:c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2-1-2\projetoaedii\parte_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"espaconave.h"
+
+1696182307 c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2-1-2\projetoaedii\parte_1\espaconave.h
+
+1696182307 source:c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2-1-2\projetoaedii\parte_1\espaconave.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"espaconave.h"
+	"passageiro.h"
+	"recurso.h"
+
+1696182307 c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2-1-2\projetoaedii\parte_1\passageiro.h
+
+1696182307 c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2-1-2\projetoaedii\parte_1\recurso.h
+
+1696182307 source:c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2-1-2\projetoaedii\parte_1\passageiro.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"passageiro.h"
+
+1696182307 source:c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2-1-2\projetoaedii\parte_1\recurso.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"recurso.h"
+
+1695646477 source:c:\users\lucas\onedrive\햞ea de trabalho\aed2\aed2-1-2\projetoaedii\parte_1\test.c
+
