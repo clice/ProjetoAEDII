@@ -51,8 +51,8 @@ void imprimirHeap(struct Heap *heap)
     }
 }
 
-// FUNÇÃO PARA GERENCIAMENTO DO HEAP
-void gerenciamentoEspaconaves(struct Heap *heap)
+// FUNÇÃO PARA GERENCIAR DO HEAP
+void gerenciarHeap(struct Heap *heap)
 {
     int opcao, prioridade;
 
@@ -204,10 +204,9 @@ int imagemEspaconave()
     printf("\t  /       \\ \n");
     printf("\t |_________|\n");
 
-    for(int i=0; i<10;i++){
+    for (int i = 0; i < 10; i++) {
         nanosleep(&delay, NULL);
         printf("\t   |  |  |\n");
-
     }
 
     nanosleep(&delay, NULL);
