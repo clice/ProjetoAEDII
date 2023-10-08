@@ -54,21 +54,30 @@ void imprimirHeap(struct Heap *heap)
 // FUNÇÃO PARA GERENCIAR DO HEAP
 void gerenciarHeap(struct Heap *heap)
 {
-    int opcao, prioridade;
+    int opcao, prioridade, porcento;
 
     while(1) {
         printf("-----------------------------------------------------------------------\n\n");
         printf("GERENCIAMENTO DA FILA DE ESPACONAVES\n\n");
+        printf("-----------------------------------------------------------------------\n\n");
         printf("ESCOLHA UMA DAS OPCOES:\n");
         printf("1 - Adicionar um nova espaconave\n");
         printf("2 - Remover uma espaconave\n");
-        printf("3 - Imprimir informacoes das espaconaves\n\n");
+        printf("3 - Imprimir informacoes das espaconaves\n");
+        printf("0 - Finalizar programa\n\n");
         printf("Informe a opcao: ");
         scanf("%d", &opcao);
         printf("\n");
 
         // Switch do menu
         switch (opcao) {
+            case 0:
+                printf("-----------------------------------------------------------------------\n\n");
+                printf("FIM DA EXECUCAO!\n\n");
+                printf("-----------------------------------------------------------------------\n");
+                exit(1);
+                break;
+
             case 1:
                 printf("Informe a prioridade da nave: ");
                 scanf("%d", &prioridade);
@@ -76,15 +85,18 @@ void gerenciarHeap(struct Heap *heap)
                 // Gerar porcentagem para cálculo da prioridade
                 int porcento = rand() % 9;
 
-                if (porcento == 1){ // Cálculo 10% de chance
+                // Cálculo 10% de chance
+                if (porcento == 1){
                     prioridade = (rand() % 100) + 1;
-                    printf("\nPRIORIDADE ALTERADA PARA %d! A nave pode ter uma possivel contaminacao!\n\n", prioridade);
+                    printf("\nPRIORIDADE ALTERADA PARA %d! A nave pode ter uma possivel contaminacao!\n", prioridade);
                     inserirEspaconave(heap, prioridade, gerarQtdPassageiros(), gerarQtdRecursos());
-                    break;
                 } else {
                     inserirEspaconave(heap, prioridade, gerarQtdPassageiros(), gerarQtdRecursos());
-                    break;
                 }
+
+                printf("\nNAVE ADICIONADA COM SUCESSO!\n\n");
+                system("pause");
+                break;
 
             case 2:
                 removerEspaconave(heap);
@@ -92,11 +104,16 @@ void gerenciarHeap(struct Heap *heap)
 
             case 3:
                 imprimirHeap(heap);
+                system("pause");
                 break;
 
             default:
+                printf("OPCAO INVALIDA!\n\n");
+                system("pause");
                 break;
         }
+
+        system("cls");
     }
 }
 

@@ -32,6 +32,7 @@ void inicializarSistema()
         // Switch do menu de inicialização
         switch (opcao) {
             case 0:
+                printf("-----------------------------------------------------------------------\n\n");
                 printf("FIM DA EXECUCAO!\n\n");
                 printf("-----------------------------------------------------------------------\n");
                 exit(1);
@@ -47,5 +48,7 @@ void inicializarSistema()
                 printf("OPCAO INVALIDA!\n\n");
                 break;
         }
+
+        system("cls");
     }
 }
