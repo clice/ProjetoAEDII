@@ -31,9 +31,22 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="espaconave.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="espaconave.h" />
+		<Unit filename="espaconaves.txt" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="passageiro.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="passageiro.h" />
+		<Unit filename="recurso.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="recurso.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

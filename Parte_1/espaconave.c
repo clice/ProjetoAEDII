@@ -72,8 +72,19 @@ void gerenciarHeap(struct Heap *heap)
             case 1:
                 printf("Informe a prioridade da nave: ");
                 scanf("%d", &prioridade);
-                inserirEspaconave(heap, prioridade, gerarQtdPassageiros(), gerarQtdRecursos());
-                break;
+
+                // Gerar porcentagem para cálculo da prioridade
+                int porcento = rand() % 9;
+
+                if (porcento == 1){ // Cálculo 10% de chance
+                    prioridade = (rand() % 100) + 1;
+                    printf("\nPRIORIDADE ALTERADA PARA %d! A nave pode ter uma possivel contaminacao!\n\n", prioridade);
+                    inserirEspaconave(heap, prioridade, gerarQtdPassageiros(), gerarQtdRecursos());
+                    break;
+                } else {
+                    inserirEspaconave(heap, prioridade, gerarQtdPassageiros(), gerarQtdRecursos());
+                    break;
+                }
 
             case 2:
                 removerEspaconave(heap);
@@ -245,5 +256,6 @@ int imagemEspaconave()
     printf("      |  |  |  |  |  |  |   \n");
     nanosleep(&delay, NULL);
     system("pause");
+    printf("\n\n");
     return 0;
 }
