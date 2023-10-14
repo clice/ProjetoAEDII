@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1697305454 source:c:\users\lucas\onedrive\Área de trabalho\aed2\parte2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"espaconave.h"
+
+1697307243 c:\users\lucas\onedrive\Área de trabalho\aed2\parte2\espaconave.h
+
+1697307226 source:c:\users\lucas\onedrive\Área de trabalho\aed2\parte2\espaconave.c
+	<stdio.h>
+	<stdlib.h>
+	"espaconave.h"
+
