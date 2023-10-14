@@ -98,3 +98,37 @@
 
 1695646477 source:c:\users\lucas\onedrive\Área de trabalho\aed2\aed2-1-2\projetoaedii\parte_1\test.c
 
+1696762970 source:c:\users\clice\projects\aed\projetoaedii\parte_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"espaconave.h"
+
+1696760674 c:\users\clice\projects\aed\projetoaedii\parte_1\espaconave.h
+
+1696762959 source:c:\users\clice\projects\aed\projetoaedii\parte_1\espaconave.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"espaconave.h"
+	"passageiro.h"
+	"recurso.h"
+
+1696760674 c:\users\clice\projects\aed\projetoaedii\parte_1\passageiro.h
+
+1696760674 c:\users\clice\projects\aed\projetoaedii\parte_1\recurso.h
+
+1696760674 source:c:\users\clice\projects\aed\projetoaedii\parte_1\passageiro.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"passageiro.h"
+
+1696760674 source:c:\users\clice\projects\aed\projetoaedii\parte_1\recurso.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"recurso.h"
+

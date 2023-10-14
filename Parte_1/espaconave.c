@@ -51,28 +51,51 @@ void imprimirHeap(struct Heap *heap)
     }
 }
 
-// FUNÇÃO PARA GERENCIAMENTO DO HEAP
-void gerenciamentoEspaconaves(struct Heap *heap)
+// FUNÇÃO PARA GERENCIAR DO HEAP
+void gerenciarHeap(struct Heap *heap)
 {
-    int opcao, prioridade;
+    int opcao, prioridade, porcento;
 
     while(1) {
         printf("-----------------------------------------------------------------------\n\n");
         printf("GERENCIAMENTO DA FILA DE ESPACONAVES\n\n");
+        printf("-----------------------------------------------------------------------\n\n");
         printf("ESCOLHA UMA DAS OPCOES:\n");
         printf("1 - Adicionar um nova espaconave\n");
         printf("2 - Remover uma espaconave\n");
-        printf("3 - Imprimir informacoes das espaconaves\n\n");
+        printf("3 - Imprimir informacoes das espaconaves\n");
+        printf("0 - Finalizar programa\n\n");
         printf("Informe a opcao: ");
         scanf("%d", &opcao);
         printf("\n");
 
         // Switch do menu
         switch (opcao) {
+            case 0:
+                printf("-----------------------------------------------------------------------\n\n");
+                printf("FIM DA EXECUCAO!\n\n");
+                printf("-----------------------------------------------------------------------\n");
+                exit(1);
+                break;
+
             case 1:
                 printf("Informe a prioridade da nave: ");
                 scanf("%d", &prioridade);
-                inserirEspaconave(heap, prioridade, gerarQtdPassageiros(), gerarQtdRecursos());
+
+                // Gerar porcentagem para cálculo da prioridade
+                int porcento = rand() % 9;
+
+                // Cálculo 10% de chance
+                if (porcento == 1){
+                    prioridade = (rand() % 100) + 1;
+                    printf("\nPRIORIDADE ALTERADA PARA %d! A nave pode ter uma possivel contaminacao!\n", prioridade);
+                    inserirEspaconave(heap, prioridade, gerarQtdPassageiros(), gerarQtdRecursos());
+                } else {
+                    inserirEspaconave(heap, prioridade, gerarQtdPassageiros(), gerarQtdRecursos());
+                }
+
+                printf("\nNAVE ADICIONADA COM SUCESSO!\n\n");
+                system("pause");
                 break;
 
             case 2:
@@ -81,11 +104,16 @@ void gerenciamentoEspaconaves(struct Heap *heap)
 
             case 3:
                 imprimirHeap(heap);
+                system("pause");
                 break;
 
             default:
+                printf("OPCAO INVALIDA!\n\n");
+                system("pause");
                 break;
         }
+
+        system("cls");
     }
 }
 
@@ -204,10 +232,9 @@ int imagemEspaconave()
     printf("\t  /       \\ \n");
     printf("\t |_________|\n");
 
-    for(int i=0; i<10;i++){
+    for (int i = 0; i < 10; i++) {
         nanosleep(&delay, NULL);
         printf("\t   |  |  |\n");
-
     }
 
     nanosleep(&delay, NULL);
@@ -246,5 +273,6 @@ int imagemEspaconave()
     printf("      |  |  |  |  |  |  |   \n");
     nanosleep(&delay, NULL);
     system("pause");
+    printf("\n\n");
     return 0;
 }

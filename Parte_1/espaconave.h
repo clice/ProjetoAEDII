@@ -22,7 +22,7 @@ struct Heap
 struct Heap *criarHeap(int capacidade);
 void organizarHeap(struct Heap *heap, int index);
 void imprimirHeap(struct Heap *heap);
-void gerenciamentoHeap(struct Heap *heap);
+void gerenciarHeap(struct Heap *heap);
 
 struct Espaconave *criarEspaconave(int prioridade, int qtdPassageiros, int qtdRecursos);
 void trocarEspaconaves(struct Espaconave **a, struct Espaconave **b);

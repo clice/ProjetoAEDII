@@ -32,6 +32,7 @@ void inicializarSistema()
         // Switch do menu de inicialização
         switch (opcao) {
             case 0:
+                printf("-----------------------------------------------------------------------\n\n");
                 printf("FIM DA EXECUCAO!\n\n");
                 printf("-----------------------------------------------------------------------\n");
                 exit(1);
@@ -40,12 +41,14 @@ void inicializarSistema()
             case 1:
                 heap = arquivoEspaconaves();
                 if (heap == NULL) break;
-                else gerenciamentoEspaconaves(heap);
+                else gerenciarHeap(heap);
                 break;
 
             default:
                 printf("OPCAO INVALIDA!\n\n");
                 break;
         }
+
+        system("cls");
     }
 }
