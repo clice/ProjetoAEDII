@@ -1,12 +1,14 @@
 # depslib dependency file v1.0
-1697305454 source:c:\users\lucas\onedrive\햞ea de trabalho\aed2\parte2\main.c
+1697829583 source:c:\users\lucas\onedrive\햞ea de trabalho\aed2\parte2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"espaconave.h"
+	<time.h>
+	<unistd.h>
 
-1697307243 c:\users\lucas\onedrive\햞ea de trabalho\aed2\parte2\espaconave.h
+1697827723 c:\users\lucas\onedrive\햞ea de trabalho\aed2\parte2\espaconave.h
 
-1697307226 source:c:\users\lucas\onedrive\햞ea de trabalho\aed2\parte2\espaconave.c
+1697830606 source:c:\users\lucas\onedrive\햞ea de trabalho\aed2\parte2\espaconave.c
 	<stdio.h>
 	<stdlib.h>
 	"espaconave.h"

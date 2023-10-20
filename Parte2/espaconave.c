@@ -36,14 +36,7 @@ int buscar_na_lista(Lista *l, int valor){
     return 0;
 }
 
-void imprimir_lista(Lista *l){
-    No *aux = l->inicio;
-    printf(" Tam: %d: ", l->tam);
-    while(aux){
-        printf("Recursos da nave: %s\n", aux->sequencia);
-        aux = aux->proximo;
-    }
-}
+
 
 void inicializarTabela(Lista t[]){
     int i;
@@ -57,45 +50,45 @@ void inicializarTabela(Lista t[]){
 int funcaoHash(int chave){
     switch (chave){
     case 111:
-        return 1;
+        return 0;
     case 1011:
-        return 2;
+        return 1;
     case 10011:
-        return 3;
+        return 2;
     case 100011:
-        return 4;
+        return 3;
     case 1101:
-        return 5;
+        return 4;
     case 10101:
-        return 6;
+        return 5;
     case 100101:
-        return 7;
+        return 6;
     case 11001:
-        return 8;
+        return 7;
     case 101001:
-        return 9;
+        return 8;
     case 110001:
-        return 10;
+        return 9;
     case 1110:
-        return 11;
+        return 10;
     case 10110:
-        return 12;
+        return 11;
     case 100110:
-        return 13;
+        return 12;
     case 11010:
-        return 14;
+        return 13;
     case 101010:
-        return 15;
+        return 14;
     case 110010:
-        return 16;
+        return 15;
     case 11100:
-        return 17;
+        return 16;
     case 101100:
-        return 18;
+        return 17;
     case 110100:
-        return 19;
+        return 18;
     case 111000 :
-        return 20;
+        return 19;
     }
 }
 
@@ -127,14 +120,7 @@ int busca(Lista t[], int chave){
     return buscar_na_lista(&t[id], chave);
 }
 
-void imprimir(Lista t[]){
-    int i;
-    for(i = 0; i < TAM; i++){
-        printf("%2d = ", i);
-        imprimir_lista(&t[i]);
-        printf("\n");
-    }
-}
+
 
 
 char gerarLetraAleatoria(char letrasUsadas[], int tamanho) {
@@ -220,3 +206,48 @@ char* generateRandomLetters() {
     return result;
 }
 
+
+void imprimir(Lista t[]){
+    int i;
+    for(i = 0; i < TAM; i++){
+        printf("%2d = ", i);
+        imprimir_lista(&t[i]);
+        printf("\n");
+    }
+}
+
+void imprimir_lista(Lista *l){
+    No *aux = l->inicio;
+    printf(" Tam: %d: ", l->tam);
+    while(aux){
+        printf("Recursos da nave: %s\n", aux->sequencia);
+        aux = aux->proximo;
+    }
+}
+
+int verificarTamanho(Lista t[]){
+    int i,tamanho=0;
+    for(i = 0; i < TAM; i++){
+        tamanho=Verifica_Tam(&t[i]);
+
+        if (tamanho==6){
+            break;
+        }
+    }
+    return(tamanho);
+}
+
+int Verifica_Tam(Lista *l){
+        No *aux = l->inicio;
+        while(aux){
+            if(l->tam==6){
+                return 6;
+                break;
+            }
+        printf("???");
+        aux=aux->proximo;
+
+        }
+
+        return 0;
+}

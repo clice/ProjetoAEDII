@@ -45,5 +45,8 @@ char gerarRecursoAleatoria(char letrasUsadas[], int tamanho);
 char* generateRandomLetters();
 
 
+int verificarTamanho(Lista t[]);
+
+int Verifica_Tam(Lista *l);
 #endif // ESPACONAVE_H_INCLUDED
 
