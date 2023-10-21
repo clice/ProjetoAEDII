@@ -17,11 +17,11 @@ void inicializarSistema()
     int opcao;
     struct Heap *heap;
 
-    printf("-----------------------------------------------------------------------\n\n");
-    printf("SISTEMA DE FILA DE PRIORIDADES DE ESPACONAVES\n\n");
+    printf("-------------------------------------------------------------------------------------------\n\n");
+    printf("SEJA BEM-VINDO(A) AO SISTEMA DE FILA DE PRIORIDADES DE ESPACONAVES DA BIG D.O.G CORPORATION\n\n");
 
     while(1) {
-        printf("-----------------------------------------------------------------------\n\n");
+        printf("-------------------------------------------------------------------------------------------\n\n");
         printf("ESCOLHA UMA DAS OPCOES:\n");
         printf("1 - Inicializar o sistema de fila de prioridades\n");
         printf("0 - Finalizar programa\n\n");
@@ -32,9 +32,9 @@ void inicializarSistema()
         // Switch do menu de inicialização
         switch (opcao) {
             case 0:
-                printf("-----------------------------------------------------------------------\n\n");
+                printf("-------------------------------------------------------------------------------------------\n\n");
                 printf("FIM DA EXECUCAO!\n\n");
-                printf("-----------------------------------------------------------------------\n");
+                printf("-------------------------------------------------------------------------------------------\n");
                 exit(1);
                 break;
 

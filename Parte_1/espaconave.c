@@ -57,9 +57,9 @@ void gerenciarHeap(struct Heap *heap)
     int opcao, prioridade, porcento;
 
     while(1) {
-        printf("-----------------------------------------------------------------------\n\n");
+        printf("-------------------------------------------------------------------------------------------\n\n");
         printf("GERENCIAMENTO DA FILA DE ESPACONAVES\n\n");
-        printf("-----------------------------------------------------------------------\n\n");
+        printf("-------------------------------------------------------------------------------------------\n\n");
         printf("ESCOLHA UMA DAS OPCOES:\n");
         printf("1 - Adicionar um nova espaconave\n");
         printf("2 - Remover uma espaconave\n");
@@ -72,9 +72,9 @@ void gerenciarHeap(struct Heap *heap)
         // Switch do menu
         switch (opcao) {
             case 0:
-                printf("-----------------------------------------------------------------------\n\n");
+                printf("-------------------------------------------------------------------------------------------\n\n");
                 printf("FIM DA EXECUCAO!\n\n");
-                printf("-----------------------------------------------------------------------\n");
+                printf("-------------------------------------------------------------------------------------------\n");
                 exit(1);
                 break;
 
@@ -190,7 +190,7 @@ struct Heap *arquivoEspaconaves()
     int prioridade;
     struct Heap *heap = criarHeap(100);
 
-    printf("-----------------------------------------------------------------------\n\n");
+    printf("-------------------------------------------------------------------------------------------\n\n");
     printf("LENDO O ARQUIVO DA LISTA DE ESPACONAVES...\n\n");
 
     // Abre o arquivo em modo de leitura
@@ -199,7 +199,7 @@ struct Heap *arquivoEspaconaves()
     // Verifica se o arquivo foi aberto com sucesso
     if (arquivo == NULL) {
         printf("Nao foi possivel abrir o arquivo %s.\n", "naves.txt");
-        printf("-----------------------------------------------------------------------\n\n");
+        printf("-------------------------------------------------------------------------------------------\n\n");
         return NULL;
     } else {
         // Lê os números do arquivo e os imprime na tela

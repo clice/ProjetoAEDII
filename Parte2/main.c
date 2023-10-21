@@ -6,10 +6,10 @@
 
 
 int main(){
-    int opcao=20, valor, retorno, i;
+    int opcao = 20, valor, retorno, i;
     Lista tabela[20];
     int soma,id;
-    printf("\nSeja Bem Vindo ao Acompanhamento das Naves 5000 Da Big D.O.G cooorp\n");
+    printf("\nSeja Bem Vindo ao Acompanhamento das Naves 5000 Da Big D.O.G Cooorp\n");
     printf("\nSo sera possivel a expansão se houver 6 naves com o mesmo recurso so que em combinações diferentes");
 
     inicializarTabela(tabela);
