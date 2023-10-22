@@ -9,6 +9,7 @@ void inserirNaHashTable(Lista t[], char recurso[4]);
 int buscarNaHashTable(Lista t[], int chave);
 int verificarTamanhoHashTable(Lista t[]);
 void imprimirHashTable(Lista t[]);
+void limparHashTable(Lista t[]);
 
 char gerarLetraAleatoria(char letrasUsadas[], int tamanho);
 void gerarSequenciaAleatoria(char sequencia[4]);

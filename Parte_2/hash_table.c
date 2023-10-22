@@ -155,7 +155,7 @@ int verificarTamanhoHashTable(Lista t[])
         if (tamanho == 6) break; // Quando tiver encontrado um caso com 6 sai do laço
     }
 
-    return(tamanho);
+    return tamanho;
 }
 
 void imprimirHashTable(Lista t[])
@@ -164,6 +164,13 @@ void imprimirHashTable(Lista t[])
         printf("%2d = ", i);
         imprimirLista(&t[i]);
         printf("\n");
+    }
+}
+
+// FUNÇÃO PARA LIMPAR A HASH TABLE
+void limparHashTable(Lista t[]) {
+    for (int i = 0; i < 20; i++) {
+        free(&t[i]);
     }
 }
 

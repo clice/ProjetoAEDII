@@ -47,8 +47,14 @@ int main()
                 printf("\n Nao e estocar expandir a Abertura \n");
             }
         } else if (opcao == 3) {
-            printf("-------------------------------------------------------------------------------------------\n\n");
-            printf("LENDO O ARQUIVO DA LISTA DE RECURSOS...\n\n");
+            printf("\nLendo o arquivo da lista de recursos...\n\n");
+
+            // Vetor de ponteiros para armazenar os recursos lidas
+            char **linhas = NULL;
+            size_t numLinhas = 0;
+
+            // Buffer para armazenar a linha lida
+            char linha[5]; // Defina o tamanho apropriado para o seu caso
 
             // Abre o arquivo em modo de leitura
             FILE *arquivo = fopen("recursos.txt", "r");
@@ -59,13 +65,6 @@ int main()
                 printf("-------------------------------------------------------------------------------------------\n\n");
                 break;
             } else {
-                // Vetor de ponteiros para armazenar os recursos lidas
-                char **linhas = NULL;
-                size_t numLinhas = 0;
-
-                // Buffer para armazenar a linha lida
-                char linha[5]; // Defina o tamanho apropriado para o seu caso
-
                 // Loop para ler e armazenar cada linha do arquivo
                 while (fgets(linha, sizeof(linha), arquivo) != NULL) {
                         // Remove o caracter de nova linha '\n'
@@ -85,18 +84,25 @@ int main()
                 // Fecha o arquivo após a leitura
                 fclose(arquivo);
 
-                // Exibe os recursos armazenadas
-                for (size_t i = 0; i < numLinhas; i++) {
-                    id = funcaoHash(calcularID(linhas[i]));
+                printf("\nArquivo lido com sucesso! Lista de recursos adicionada.\n\n");
+            }
 
-                    if (verificarRepeticao(&tabela[id], linhas[i]) == 0) {
-                        inserirNaHashTable(tabela, linhas[i]);
-                    }
+            // Exibe os recursos armazenadas
+            for (size_t i = 0; i < numLinhas; i++) {
+                id = funcaoHash(calcularID(linhas[i]));
 
-                    free(linhas[i]); // Libera a memória alocada para cada linha
+                if (verificarRepeticao(&tabela[id], linhas[i]) == 0) {
+                    inserirNaHashTable(tabela, linhas[i]);
                 }
 
-                printf("\nARQUIVO LIDO COM SUCESSO! Lista de recursos adicionada.\n\n");
+                free(linhas[i]); // Libera a memória alocada para cada linha
+            }
+
+            if (verificarTamanhoHashTable(tabela) == 6) {
+                printf("\nQuantidade de recursos atingiu a quantidade maxima! PORTAL SE ABRIU!\n");
+                printf("\nLIMPEZA NECESSARIA!\n\n");
+                // limparHashTable(tabela);
+                inicializarHashTable(tabela);
             }
         }
     }
