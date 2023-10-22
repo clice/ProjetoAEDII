@@ -13,14 +13,15 @@
 	<stdlib.h>
 	"espaconave.h"
 
-1697409578 source:c:\users\clice\projects\aed\projetoaedii\parte2\espaconave.c
+1697932402 source:c:\users\clice\projects\aed\projetoaedii\parte2\espaconave.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 	"espaconave.h"
 
-1697409578 c:\users\clice\projects\aed\projetoaedii\parte2\espaconave.h
+1697932584 c:\users\clice\projects\aed\projetoaedii\parte2\espaconave.h
 
-1697409578 source:c:\users\clice\projects\aed\projetoaedii\parte2\main.c
+1697915470 source:c:\users\clice\projects\aed\projetoaedii\parte2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"espaconave.h"

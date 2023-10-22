@@ -54,30 +54,24 @@ void imprimirHeap(struct Heap *heap)
 // FUNÇÃO PARA GERENCIAR DO HEAP
 void gerenciarHeap(struct Heap *heap)
 {
-    int opcao, prioridade, porcento;
+    int c, opcao, prioridade;
 
     while(1) {
         printf("-------------------------------------------------------------------------------------------\n\n");
-        printf("GERENCIAMENTO DA FILA DE ESPACONAVES\n\n");
+        printf("SEJA BEM-VINDO(A) AO GERENCIAMENTO DA FILA DE ESPACONAVES DA BIG D.O.G CORPORATION\n\n");
         printf("-------------------------------------------------------------------------------------------\n\n");
         printf("ESCOLHA UMA DAS OPCOES:\n");
         printf("1 - Adicionar um nova espaconave\n");
         printf("2 - Remover uma espaconave\n");
         printf("3 - Imprimir informacoes das espaconaves\n");
-        printf("0 - Finalizar programa\n\n");
+        printf("4 - Finalizar programa\n\n");
         printf("Informe a opcao: ");
         scanf("%d", &opcao);
         printf("\n");
 
         // Switch do menu
         switch (opcao) {
-            case 0:
-                printf("-------------------------------------------------------------------------------------------\n\n");
-                printf("FIM DA EXECUCAO!\n\n");
-                printf("-------------------------------------------------------------------------------------------\n");
-                exit(1);
-                break;
-
+            // Caso queira adicionar uma nova espaçonave a fila de prioridades
             case 1:
                 printf("Informe a prioridade da nave: ");
                 scanf("%d", &prioridade);
@@ -98,17 +92,30 @@ void gerenciarHeap(struct Heap *heap)
                 system("pause");
                 break;
 
+            // Caso queira remover uma das espaçonaves com base na meior prioridade
             case 2:
                 removerEspaconave(heap);
                 break;
 
+            // Caso queira imprimir a lista com as espaçonaves ordenadas pela maior prioridade com seus ramos
             case 3:
                 imprimirHeap(heap);
                 system("pause");
                 break;
 
+            // Caso queira finalizar o programa
+            case 4:
+                printf("-------------------------------------------------------------------------------------------\n\n");
+                printf("A BIG D.O.G CORPORATION AGRADECE A PREFERENCIA!\n\n");
+                printf("FIM DA EXECUCAO!\n\n");
+                printf("-------------------------------------------------------------------------------------------\n");
+                exit(1);
+                break;
+
+            // Caso a opção informada não esteja na lista
             default:
                 printf("OPCAO INVALIDA!\n\n");
+                while ((c = getchar()) != '\n' && c != EOF); // Limpar a entrada do buffer
                 system("pause");
                 break;
         }
@@ -198,7 +205,7 @@ struct Heap *arquivoEspaconaves()
 
     // Verifica se o arquivo foi aberto com sucesso
     if (arquivo == NULL) {
-        printf("Nao foi possivel abrir o arquivo %s.\n", "naves.txt");
+        printf("Nao foi possivel abrir o arquivo %s.\n", "espaconaves.txt");
         printf("-------------------------------------------------------------------------------------------\n\n");
         return NULL;
     } else {

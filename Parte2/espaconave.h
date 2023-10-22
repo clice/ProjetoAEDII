@@ -1,30 +1,21 @@
 #ifndef ESPACONAVE_H_INCLUDED
 #define ESPACONAVE_H_INCLUDED
 
-
-
-
-
-typedef struct no{
+typedef struct no {
     char sequencia[4];
     int chave;
     struct no *proximo;
-}No;
+} No;
 
-typedef struct lista{
+typedef struct lista {
     No *inicio;
     int tam;
-}Lista;
-
+} Lista;
 
 void inicializarLista(Lista *l);
-
 void inserir_na_lista(Lista *l,char recursos[4]);
-
 int buscar_na_lista(Lista *l, int valor);
-
 void imprimir_lista(Lista *l);
-
 void inicializarTabela(Lista t[]);
 
 int funcaoHash(int chave);
@@ -42,11 +33,13 @@ int calcularPosicao(char sequencia[4]);
 void gerarRecurso(char sequencia[4]);
 
 char gerarRecursoAleatoria(char letrasUsadas[], int tamanho);
-char* generateRandomLetters();
-
+//char* generateRandomLetters();
 
 int verificarTamanho(Lista t[]);
 
 int Verifica_Tam(Lista *l);
+
+struct Lista *arquivoRecursos(Lista t[]);
+
 #endif // ESPACONAVE_H_INCLUDED
 
