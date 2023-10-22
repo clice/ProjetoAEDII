@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "espaconave.h"
 #include <time.h>
 #include <unistd.h>
 
+#include "espaconave.h"
+
 int main()
 {
-    int opcao = 20, valor, retorno, i, teste, soma, id;
+    int opcao = 20, i, teste, id;
     Lista tabela[20];
 
     printf("\nSeja Bem-Vindo(a) ao Acompanhamento das Naves 5000 Da Big D.O.G Corporation\n");
@@ -28,7 +29,8 @@ int main()
             for (i = 0; i < 10; i++) {
                 char recurso[4];
                 gerarSequenciaAleatoria(recurso);
-                int id = funcaoHash(calcularID(recurso));
+                id = funcaoHash(calcularID(recurso));
+                printf("%d\n", id);
 
                 if (verificaRepeticao(&tabela[id], recurso) == 0) {
                     inserir(tabela, recurso);
@@ -44,7 +46,39 @@ int main()
                 printf("\n Nao e estocar expandir a Abertura \n");
             }
         } else if (opcao == 3) {
-            arquivoRecursos(tabela);
+            printf("-------------------------------------------------------------------------------------------\n\n");
+            printf("LENDO O ARQUIVO DA LISTA DE RECURSOS...\n\n");
+
+            char recurso[4];
+
+            // Abre o arquivo em modo de leitura
+            FILE *arquivo = fopen("recursos.txt", "r");
+
+            // Verifica se o arquivo foi aberto com sucesso
+            if (arquivo == NULL) {
+                printf("Nao foi possivel abrir o arquivo %s.\n", "recursos.txt");
+                printf("-------------------------------------------------------------------------------------------\n\n");
+                break;
+            } else {
+                // Lê os números do arquivo e os imprime na tela
+                while (fgets(recurso, sizeof(recurso), arquivo) != NULL) {
+                    printf("%s\n", recurso);
+                    recurso[3] = '\0'; // Adiciona um caractere nulo para criar uma string válida
+                    id = funcaoHash(calcularID(recurso));
+                    printf("%d\n", id);
+
+                    //if (verificaRepeticao(&tabela[id], recurso) == 0) {
+                    //    inserir(tabela, recurso);
+                    //}
+                }
+
+                // Fecha o arquivo após a leitura
+                fclose(arquivo);
+
+                printf("\n\nARQUIVO LIDO COM SUCESSO! Lista de recursos adicionada e organizada.\n\n");
+
+                // return heap;
+            }
         }
     }
 

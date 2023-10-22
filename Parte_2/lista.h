@@ -11,14 +11,15 @@ typedef struct No {
 // ESTRUTURA PARA REPRESENTAR A LISTA DE NAVES
 typedef struct Lista {
     No *inicio;  //
-    int tam;     // Tamanho da lista de espa�onaves
+    int tam;     // Tamanho da lista de espaçonaves
 } Lista;
 
 void inicializarLista(Lista *l);
 void inserirNaLista(Lista *l, char recursos[4]);
 int buscarNaLista(Lista *l, int valor);
-void imprimirNaLista(Lista *l);
+void imprimirLista(Lista *l);
 
-int verificaRepeticao(Lista *l, char recurso[4]);
+int verificarRepeticao(Lista *l, char recurso[4]);
+int verificarTamanhoLista(Lista *l);
 
 #endif // LISTA_H

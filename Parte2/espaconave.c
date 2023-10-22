@@ -100,7 +100,6 @@ int verificaRepeticao (Lista *l, char recurso[4])
 }
 
 // Funcao para calcular a soma dos valores associados �s letras na sequ�ncia
-//calcularSomaSequencia
 int calcularID(char sequencia[4])
 {
     int valores[6] = {1, 10, 100, 1000, 10000, 100000};
@@ -152,9 +151,9 @@ char gerarLetraAleatoria(char letrasUsadas[], int tamanho)
 
     for (int i = 0; i < tamanho; i++) {
         if (letrasUsadas[i] == letrasRestantes[indiceAleatorio]) {
-            // Se a letra j� foi usada, ajusta o �ndice aleat�rio
+            // Se a letra já foi usada, ajusta o índice aleatório
             indiceAleatorio = (indiceAleatorio + 1) % letrasRestantesCount;
-            i = -1; // Volta ao in�cio do loop para verificar novamente
+            i = -1; // Volta ao início do loop para verificar novamente
         }
     }
 
@@ -173,30 +172,6 @@ void gerarSequenciaAleatoria(char sequencia[4])
 
     sequencia[3] = '\0'; // Adiciona um caractere nulo para criar uma string v�lida
 }
-
-// char* generateRandomLetters()
-// {
-//     char letters[] = {'A', 'B', 'C', 'D', 'E', 'F'};
-//     char* result = (char*)malloc(4); // 4 characters (3 letters + '\0')
-
-//     if (result != NULL) {
-//         srand(time(NULL)); // Inicializa a semente do gerador de n�meros aleat�rios com o tempo atual
-
-//         for (int i = 0; i < 3; i++) {
-//             int randomIndex = rand() % 6; // Gera um �ndice aleat�rio de 0 a 5
-//             result[i] = letters[randomIndex];
-
-//             // Remove a letra escolhida para que ela n�o seja escolhida novamente
-//             for (int j = randomIndex; j < 5; j++) {
-//                 letters[j] = letters[j + 1];
-//             }
-//         }
-
-//         result[3] = '\0'; // Adiciona o caractere nulo ao final da string
-//     }
-
-//     return result;
-// }
 
 void imprimir(Lista t[])
 {
@@ -238,18 +213,16 @@ int Verifica_Tam(Lista *l)
             return 6;
             break;
         }
-    printf("???");
-    aux=aux->proximo;
 
+        aux=aux->proximo;
     }
 
     return 0;
 }
 
 // FUNÇÃO PARA LER O ARQUIVO COM AS INFORMAÇÕES DOS RECURSOS
-struct Lista *arquivoRecursos(Lista t[])
+void arquivoRecursos(Lista t[])
 {
-    // struct Heap *heap = criarHeap(100);
     char recurso[4]; // Tamanho máximo de uma linha
 
     printf("-------------------------------------------------------------------------------------------\n\n");
@@ -262,17 +235,15 @@ struct Lista *arquivoRecursos(Lista t[])
     if (arquivo == NULL) {
         printf("Nao foi possivel abrir o arquivo %s.\n", "recursos.txt");
         printf("-------------------------------------------------------------------------------------------\n\n");
-        return NULL;
     } else {
         // Lê os números do arquivo e os imprime na tela
         while (fgets(recurso, sizeof(recurso), arquivo) != NULL) {
-            // inserirEspaconave(heap, prioridade, gerarQtdPassageiros(), gerarQtdRecursos());
             printf("%s", recurso);
-            //int id = funcaoHash(calcularID(recurso));
+            int id = funcaoHash(calcularID(recurso));
 
-            //if (verificaRepeticao(&tabela[id], recurso) == 0) {
-                //inserir(tabela, recurso);
-            //}
+            if (verificaRepeticao(&t[id], recurso) == 0) {
+                inserir(t, recurso);
+            }
         }
 
         // Fecha o arquivo após a leitura

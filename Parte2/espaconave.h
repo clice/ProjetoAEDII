@@ -32,14 +32,15 @@ int calcularPosicao(char sequencia[4]);
 
 void gerarRecurso(char sequencia[4]);
 
-char gerarRecursoAleatoria(char letrasUsadas[], int tamanho);
-//char* generateRandomLetters();
+void gerarSequenciaAleatoria(char sequencia[4]);
+
+int calcularID(char sequencia[4]);
 
 int verificarTamanho(Lista t[]);
 
 int Verifica_Tam(Lista *l);
 
-struct Lista *arquivoRecursos(Lista t[]);
+void arquivoRecursos(Lista t[]);
 
 #endif // ESPACONAVE_H_INCLUDED
 
