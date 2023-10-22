@@ -13,10 +13,10 @@ Após baixar o projeto, ou clonar o repositório do GitHub, na opção "Open exi
 Considerando que já há uma instalação de algum compilador GCC da linguagem C, é possível executar o projeto utilizando os comandos: 
 
 **Para compilar o código:**
-```gcc main.c espaconave.c passageiro.c recurso.c -o main```
+`gcc main.c espaconave.c passageiro.c recurso.c -o main`
 
 **Para executar o código:**
-```main```
+`main`
 
 ## Instruções para execução dos códigos da Parte 2
 
@@ -31,7 +31,7 @@ Após baixar o projeto, ou clonar o repositório do GitHub, na opção "Open exi
 Considerando que já há uma instalação de algum compilador GCC da linguagem C, é possível executar o projeto utilizando os comandos: 
 
 **Para compilar o código:**
-```gcc main.c lista.c hash_table.c -o main```
+`gcc main.c lista.c hash_table.c -o main`
 
 **Para executar o código:**
-```main```
+`main`
