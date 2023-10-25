@@ -18,6 +18,7 @@ void inicializarLista(Lista *l);
 void inserirNaLista(Lista *l, char recursos[4]);
 int buscarNaLista(Lista *l, int valor);
 void imprimirLista(Lista *l);
+void limparLista(Lista *l);
 
 int verificarRepeticao(Lista *l, char recurso[4]);
 int verificarTamanhoLista(Lista *l);

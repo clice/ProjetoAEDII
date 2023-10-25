@@ -57,9 +57,10 @@ void gerenciarHeap(struct Heap *heap)
     int c, opcao, prioridade;
 
     while(1) {
-        printf("-------------------------------------------------------------------------------------------\n\n");
-        printf("SEJA BEM-VINDO(A) AO GERENCIAMENTO DA FILA DE ESPACONAVES DA BIG D.O.G CORPORATION\n\n");
-        printf("-------------------------------------------------------------------------------------------\n\n");
+        printf("---------------------------------------------------------\n\n");
+        printf("SEJA BEM-VINDO(A) AO GERENCIAMENTO DA FILA DE ESPACONAVES\n");
+        printf("DA BIG D.O.G CORPORATION\n\n");
+        printf("---------------------------------------------------------\n\n");
         printf("ESCOLHA UMA DAS OPCOES:\n");
         printf("1 - Adicionar um nova espaconave\n");
         printf("2 - Remover uma espaconave\n");
@@ -82,10 +83,13 @@ void gerenciarHeap(struct Heap *heap)
                 // Cálculo 10% de chance
                 if (porcento == 1){
                     prioridade = (rand() % 100) + 1;
-                    printf("\nPRIORIDADE ALTERADA PARA %d! A nave pode ter uma possivel contaminacao!\n", prioridade);
-                    inserirEspaconave(heap, prioridade, gerarQtdPassageiros(), gerarQtdRecursos());
+                    printf("\nPRIORIDADE ALTERADA PARA %d! ", prioridade);
+                    printf("A nave pode ter uma possivel contaminacao!\n", prioridade);
+                    inserirEspaconave(heap, prioridade,
+                                    gerarQtdPassageiros(), gerarQtdRecursos());
                 } else {
-                    inserirEspaconave(heap, prioridade, gerarQtdPassageiros(), gerarQtdRecursos());
+                    inserirEspaconave(heap, prioridade,
+                                      gerarQtdPassageiros(), gerarQtdRecursos());
                 }
 
                 printf("\nNAVE ADICIONADA COM SUCESSO!\n\n");
@@ -105,10 +109,10 @@ void gerenciarHeap(struct Heap *heap)
 
             // Caso queira finalizar o programa
             case 4:
-                printf("-------------------------------------------------------------------------------------------\n\n");
+                printf("---------------------------------------------------------\n\n");
                 printf("A BIG D.O.G CORPORATION AGRADECE A PREFERENCIA!\n\n");
                 printf("FIM DA EXECUCAO!\n\n");
-                printf("-------------------------------------------------------------------------------------------\n");
+                printf("---------------------------------------------------------\n");
                 exit(1);
                 break;
 
@@ -129,7 +133,8 @@ void gerenciarHeap(struct Heap *heap)
 // FUNÇÃO PARA CRIAR UMA NOVA ESPAÇONAVE
 struct Espaconave *criarEspaconave(int prioridade, int qtdPassageiros, int qtdRecursos)
 {
-    struct Espaconave *nave = (struct Espaconave *)malloc(sizeof(struct Espaconave)); // Aloca memória para o Heap de espaçonaves
+    // Aloca memória para o Heap de espaçonaves
+    struct Espaconave *nave = (struct Espaconave *)malloc(sizeof(struct Espaconave));
     nave->prioridade = prioridade; // Define a prioridade da espaçonave
     nave->qtdPassageiros = qtdPassageiros; // Define a quantidade de passageiros na espaçonave
     nave->qtdRecursos = qtdRecursos; // Define a quantidade de recursos na espaçonave
@@ -197,7 +202,7 @@ struct Heap *arquivoEspaconaves()
     int prioridade;
     struct Heap *heap = criarHeap(100);
 
-    printf("-------------------------------------------------------------------------------------------\n\n");
+    printf("---------------------------------------------------------\n\n");
     printf("LENDO O ARQUIVO DA LISTA DE ESPACONAVES...\n\n");
 
     // Abre o arquivo em modo de leitura
@@ -206,7 +211,7 @@ struct Heap *arquivoEspaconaves()
     // Verifica se o arquivo foi aberto com sucesso
     if (arquivo == NULL) {
         printf("Nao foi possivel abrir o arquivo %s.\n", "espaconaves.txt");
-        printf("-------------------------------------------------------------------------------------------\n\n");
+        printf("---------------------------------------------------------\n\n");
         return NULL;
     } else {
         // Lê os números do arquivo e os imprime na tela

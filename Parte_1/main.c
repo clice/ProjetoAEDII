@@ -19,9 +19,10 @@ void inicializarSistema()
     struct Heap *heap;
 
     while(1) {
-        printf("-------------------------------------------------------------------------------------------\n\n");
-        printf("SEJA BEM-VINDO(A) AO SISTEMA DE FILA DE PRIORIDADES DE ESPACONAVES DA BIG D.O.G CORPORATION\n\n");
-        printf("-------------------------------------------------------------------------------------------\n\n");
+        printf("---------------------------------------------------------\n\n");
+        printf("SEJA BEM-VINDO(A) AO SISTEMA DE FILA DE PRIORIDADES DE\n");
+        printf("ESPACONAVES DA BIG D.O.G CORPORATION\n\n");
+        printf("---------------------------------------------------------\n\n");
         printf("ESCOLHA UMA DAS OPCOES:\n");
         printf("1 - Inicializar o sistema de fila de prioridades\n");
         printf("2 - Finalizar programa\n\n");
@@ -41,10 +42,10 @@ void inicializarSistema()
 
             // Caso queira finalizar o programa
             case 2:
-                printf("-------------------------------------------------------------------------------------------\n\n");
+                printf("---------------------------------------------------------\n\n");
                 printf("A BIG D.O.G CORPORATION AGRADECE A PREFERENCIA!\n\n");
                 printf("FIM DA EXECUCAO!\n\n");
-                printf("-------------------------------------------------------------------------------------------\n");
+                printf("---------------------------------------------------------\n");
                 exit(1);
                 break;
 

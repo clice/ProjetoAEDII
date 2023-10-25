@@ -10,100 +10,81 @@
 int main()
 {
     int opcao = 20, i, teste, id;
+    char escolha;
     Lista tabela[20];
 
-    printf("\nSeja Bem-Vindo(a) ao Acompanhamento das Naves 5000 Da Big D.O.G Corporation\n");
-    printf("\nSo sera possivel a expansao se houver 6 naves com o mesmo recurso so que em combinacoes diferentes\n\n");
+    printf("---------------------------------------------------------\n\n");
+    printf("\nSeja Bem-Vindo(a) ao Acompanhamento das Naves 5000\n");
+    printf("Da Big D.O.G Corporation\n");
+    printf("\nSo sera possivel a expansao se houver 6 naves com o\n");
+    printf("mesmo recurso so que em combinacoes diferentes\n\n");
+    printf("---------------------------------------------------------\n\n");
 
     inicializarHashTable(tabela);
 
     while (opcao != 0) {
         imprimirHashTable(tabela);
 
+        printf("\n\t---------------------------------------------------------\n");
         printf("\n\t0 - Sair");
         printf("\n\t1 - Atualizar a lista");
-        printf("\n\t2 - Verificar se e possivel fazer a Expansao da entrada");
+        printf("\n\t2 - Verificar se e possivel fazer a expansao da entrada");
         printf("\n\t3 - Exemplo com leitura de arquivo");
         printf("\n\tInforme a opcao: ");
         scanf("%d", &opcao);
+        printf("\n\t---------------------------------------------------------\n\n");
 
+        // Caso queira atualizar a lista de espaçonaves (gera automaticamente)
         if (opcao == 1) {
-            for (i = 0; i < 10; i++) {
+            // Gera automaticamente 10 espaçonaves
+            for (i = 0; i < 200; i++) { // Alterar para diminuir a quantidade de inserções
                 char recurso[4];
+                // Gera a sequência de recursos das espaçonaves
                 gerarSequenciaAleatoria(recurso);
+                // Identifica a hash de cada recurso gerado
                 id = funcaoHash(calcularID(recurso));
 
+                // Verifica se a hash é válida e se sim insere na hash table
                 if (verificarRepeticao(&tabela[id], recurso) == 0) {
                     inserirNaHashTable(tabela, recurso);
                 }
             }
         }
+        // Caso queira verificar se é possível realizar a expansão da passagem
         else if (opcao == 2) {
             teste = verificarTamanhoHashTable(tabela);
 
+            // Se as 6 possibilidades de combinações de recursos forem encontradas
             if (teste == 6) {
-                printf("\n Deseja estocar na Abertura?[Y/N] \n");
-            } else if (teste == 0) {
-                printf("\n Nao e estocar expandir a Abertura \n");
-            }
-        } else if (opcao == 3) {
-            printf("\nLendo o arquivo da lista de recursos...\n\n");
+                printf("\n Finalmente foi encontrado os recursos necessarios!!!! \n");
+                printf("\n Desejas expandir a abertura para salvar a galaxia?[Y/N] \n");
+                scanf("%d", escolha);
+                escolha= getchar();
 
-            // Vetor de ponteiros para armazenar os recursos lidas
-            char **linhas = NULL;
-            size_t numLinhas = 0;
-
-            // Buffer para armazenar a linha lida
-            char linha[5]; // Defina o tamanho apropriado para o seu caso
-
-            // Abre o arquivo em modo de leitura
-            FILE *arquivo = fopen("recursos.txt", "r");
-
-            // Verifica se o arquivo foi aberto com sucesso
-            if (arquivo == NULL) {
-                printf("Nao foi possivel abrir o arquivo %s.\n", "recursos.txt");
-                printf("-------------------------------------------------------------------------------------------\n\n");
-                break;
-            } else {
-                // Loop para ler e armazenar cada linha do arquivo
-                while (fgets(linha, sizeof(linha), arquivo) != NULL) {
-                        // Remove o caracter de nova linha '\n'
-                    size_t len = strlen(linha);
-                    if (len > 0 && linha[len - 1] == '\n') {
-                        linha[len - 1] = '\0';
-                    }
-
-                    // Aloca espaço para a linha lida e copia-a para o vetor
-                    char *novaLinha = strdup(linha); // Requer #include <string.h>
-                    linhas = (char **)realloc(linhas, (numLinhas + 1) * sizeof(char *));
-                    linhas[numLinhas] = novaLinha;
-
-                    numLinhas++;
+                // Realizar a limpeza da tabela
+                if (escolha == 'Y'){
+                    limparHashTable(tabela);
                 }
-
-                // Fecha o arquivo após a leitura
-                fclose(arquivo);
-
-                printf("\nArquivo lido com sucesso! Lista de recursos adicionada.\n\n");
-            }
-
-            // Exibe os recursos armazenadas
-            for (size_t i = 0; i < numLinhas; i++) {
-                id = funcaoHash(calcularID(linhas[i]));
-
-                if (verificarRepeticao(&tabela[id], linhas[i]) == 0) {
-                    inserirNaHashTable(tabela, linhas[i]);
+                //
+                else{
+                    imprimirTristeza();
+                    sleep(5);
+                    limparHashTable(tabela);
                 }
-
-                free(linhas[i]); // Libera a memória alocada para cada linha
             }
-
-            if (verificarTamanhoHashTable(tabela) == 6) {
-                printf("\nQuantidade de recursos atingiu a quantidade maxima! PORTAL SE ABRIU!\n");
-                printf("\nLIMPEZA NECESSARIA!\n\n");
-                // limparHashTable(tabela);
-                inicializarHashTable(tabela);
+            else if (teste == 0){
+                printf("\n AINDA NAO E POSSIVEL EXPANDIR \n");
+                sleep(5);
             }
+        }
+        // Caso queira testar um exemplo de expansão
+        else if (opcao == 3) {
+
+        }
+        // Caso informe uma opção inválida
+        else{
+            printf("CALMA GUERREIRO, SO TEM 3 OPCOES");
+            sleep(5);
         }
     }
 
