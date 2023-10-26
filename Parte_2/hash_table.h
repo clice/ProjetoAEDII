@@ -14,6 +14,8 @@ void limparHashTable(Lista t[]);
 char gerarLetraAleatoria(char letrasUsadas[], int tamanho);
 void gerarSequenciaAleatoria(char sequencia[4]);
 
+void verificarExpansaoPassagem(Lista t[]);
+void arquivoRecursos(Lista t[]);
 void imprimirTristeza();
 
 #endif // HASH_TABLE_H

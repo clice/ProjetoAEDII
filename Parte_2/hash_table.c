@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
 #include "lista.h"
 #include "hash_table.h"
@@ -174,7 +176,7 @@ void imprimirHashTable(Lista t[])
 
 // FUNÇÃO PARA LIMPAR A HASH TABLE
 void limparHashTable(Lista t[]) {
-    int i, tamanho = 0;
+    int i;
 
     for(i = 0; i < 20; i++){
        limparLista(&t[i]);
@@ -215,11 +217,113 @@ void gerarSequenciaAleatoria(char sequencia[4])
     sequencia[3] = '\0'; // Adiciona um caractere nulo para criar uma string válida
 }
 
+// FUNÇÃO PARA VERIFICAR SE É POSSÍVEL ABRIR A PASSAGEM
+void verificarExpansaoPassagem(Lista t[])
+{
+    int teste;
+    char escolha;
+
+    teste = verificarTamanhoHashTable(t);
+
+    // Se as 6 possibilidades de combinações de recursos forem encontradas
+    if (teste == 6) {
+        printf("---------------------------------------------------------\n\n");
+        printf("\n Finalmente foram encontrados os recursos necessarios!!!! \n");
+        printf("\n Desejas expandir a abertura para salvar a galaxia? [Y/N]: ");
+        scanf("%c", &escolha);
+        escolha = getchar();
+
+        // Realizar a limpeza da tabela
+        if (escolha == 'Y'){
+            printf("\n---------------------------------------------------------\n\n");
+            limparHashTable(t);
+        }
+        // Imprimir caso o usuário não queira limpar, mas será limpa do mesmo jeito
+        else{
+            imprimirTristeza();
+            sleep(5);
+            limparHashTable(t);
+        }
+    }
+    // Caso ainda não seja possível abrir a passagem
+    else if (teste == 0){
+        printf("\n---------------------------------------------------------\n\n");
+        printf("\n AINDA NAO E POSSIVEL EXPANDIR \n");
+        printf("\n---------------------------------------------------------\n\n");
+        sleep(5);
+    }
+}
+
+// FUNÇÃO PARA LEITURA DE ARQUIVO COM RECURSOS DEFINIDOS
+void arquivoRecursos(Lista t[])
+{
+    int id;
+    char **linhas = NULL;
+    size_t numLinhas = 0;
+
+    printf("\nLendo o arquivo da lista de recursos...\n\n");
+
+    // Buffer para armazenar a linha lida
+    char linha[5]; // Defina o tamanho apropriado para o seu caso
+
+    // Abre o arquivo em modo de leitura
+    FILE *arquivo = fopen("recursos.txt", "r");
+
+    // Verifica se o arquivo foi aberto com sucesso
+    if (arquivo == NULL) {
+        printf("Nao foi possivel abrir o arquivo %s.\n", "recursos.txt");
+        printf("---------------------------------------------------------\n\n");
+    } else {
+        // Loop para ler e armazenar cada linha do arquivo
+        while (fgets(linha, sizeof(linha), arquivo) != NULL) {
+            // Remove o caracter de nova linha '\n'
+            // size_t é um tipo de dado mesmo que 'int' não sinalizado
+            // usado para armazenar o retorno de uma operação sizeof
+            size_t len = strlen(linha);
+            if (len > 0 && linha[len - 1] == '\n') {
+                linha[len - 1] = '\0';
+            }
+
+            // Aloca espaço para a linha lida e copia-a para o vetor
+            char *novaLinha = strdup(linha); // Requer #include <string.h>
+            linhas = (char **)realloc(linhas, (numLinhas + 1) * sizeof(char *));
+            linhas[numLinhas] = novaLinha;
+
+            numLinhas++;
+        }
+
+        // Fecha o arquivo após a leitura
+        fclose(arquivo);
+
+        printf("\nArquivo lido com sucesso! Lista de recursos adicionada.\n\n");
+        printf("---------------------------------------------------------\n\n");
+    }
+
+    // Exibe os recursos armazenadas
+    for (size_t i = 0; i < numLinhas; i++) {
+        id = funcaoHash(calcularID(linhas[i]));
+
+        if (verificarRepeticao(&t[id], linhas[i]) == 0) {
+            inserirNaHashTable(t, linhas[i]);
+        }
+
+        free(linhas[i]); // Libera a memória alocada para cada linha
+    }
+
+    imprimirHashTable(t);
+
+    verificarExpansaoPassagem(t);
+}
+
+
+// FUNÇÃO PARA IMPRIMIR TRISTEZA
 void imprimirTristeza()
 {
+    printf("\n---------------------------------------------------------\n\n");
     printf("  .-.-.  \n");
-    printf(" / 0 0 \\ \n");
-    printf("|   l   | Voce so tinha uma funcao, apertar Y, por sua culpa vamos morrer de fome, PARABENS!\n");
-    printf(" \\ --  / \n");
-    printf("  '---'  \n");
+    printf(" / 0 0 \\  Voce so tinha uma funcao, apertar o Y!\n");
+    printf("|   l   | Por sua culpa vamos morrer de fome!\n");
+    printf(" \\ --  /  PARABENS!\n");
+    printf("  '---'  \n\n");
+    printf("---------------------------------------------------------\n\n");
 }

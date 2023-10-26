@@ -68,6 +68,7 @@ void imprimirLista(Lista *l)
     }
 }
 
+// FUNÇÃO PARA LIMPAR A LISTA
 void limparLista(Lista *l)
 {
     No *aux = l->inicio;
@@ -85,11 +86,11 @@ int verificarRepeticao(Lista *l, char recurso[4])
     No *aux = l->inicio; // Inicializa um ponteiro auxiliar para o in�cio da lista
 
     // Percorre a lista enquanto o ponteiro auxiliar n�o for nulo e
-    // a sequ�ncia do n� atual for diferente do recurso procurado.
+    // a sequência do nó atual for diferente do recurso procurado.
     while (aux && (strcmp(aux->sequencia, recurso) != 0)) aux = aux->proximo;
 
     // Verifica se a sequ�ncia foi encontrada na lista
-    // Se o ponteiro auxiliar n�o � nulo, significa que a sequ�ncia foi encontrada,
+    // Se o ponteiro auxiliar não é nulo, significa que a sequência foi encontrada,
     // e a fun��o retorna 1 para indicar que houve repeti��o
     // Caso contr�rio, se a sequ�ncia n�o foi encontrada,
     // a função retorna 0 para indicar que n�o houve repeti��o
@@ -108,72 +109,9 @@ int verificarTamanhoLista(Lista *l)
             return 6;
             break;
         }
+
         aux = aux->proximo;
     }
 
     return 0;
-}
-
-//
-void arquivo(Lista tabela[])
-{
-    int id;
-    char **linhas = NULL;
-    size_t numLinhas = 0;
-
-    printf("\nLendo o arquivo da lista de recursos...\n\n");
-
-    // Buffer para armazenar a linha lida
-    char linha[5]; // Defina o tamanho apropriado para o seu caso
-
-    // Abre o arquivo em modo de leitura
-    FILE *arquivo = fopen("recursos.txt", "r");
-
-    // Verifica se o arquivo foi aberto com sucesso
-    if (arquivo == NULL) {
-        printf("Nao foi possivel abrir o arquivo %s.\n", "recursos.txt");
-        printf("---------------------------------------------------------\n\n");
-        //break;
-    } else {
-        // Loop para ler e armazenar cada linha do arquivo
-        while (fgets(linha, sizeof(linha), arquivo) != NULL) {
-            // Remove o caracter de nova linha '\n'
-            // size_t é um tipo de dado mesmo que 'int' não sinalizado
-            // usado para armazenar o retorno de uma operação sizeof
-            size_t len = strlen(linha);
-            if (len > 0 && linha[len - 1] == '\n') {
-                linha[len - 1] = '\0';
-            }
-
-            // Aloca espaço para a linha lida e copia-a para o vetor
-            char *novaLinha = strdup(linha); // Requer #include <string.h>
-            linhas = (char **)realloc(linhas, (numLinhas + 1) * sizeof(char *));
-            linhas[numLinhas] = novaLinha;
-
-            numLinhas++;
-        }
-
-        // Fecha o arquivo após a leitura
-        fclose(arquivo);
-
-        printf("\nArquivo lido com sucesso! Lista de recursos adicionada.\n\n");
-    }
-
-    // Exibe os recursos armazenadas
-    for (size_t i = 0; i < numLinhas; i++) {
-        id = funcaoHash(calcularID(linhas[i]));
-
-        if (verificarRepeticao(&tabela[id], linhas[i]) == 0) {
-            inserirNaHashTable(tabela, linhas[i]);
-        }
-
-        free(linhas[i]); // Libera a memória alocada para cada linha
-    }
-
-    if (verificarTamanhoHashTable(tabela) == 6) {
-        printf("\nQuantidade de recursos atingiu a quantidade maxima! PORTAL SE ABRIU!\n");
-        printf("\nLIMPEZA NECESSARIA!\n\n");
-        // limparHashTable(tabela);
-        inicializarHashTable(tabela);
-    }
 }

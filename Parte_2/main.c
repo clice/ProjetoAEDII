@@ -52,38 +52,15 @@ int main()
         }
         // Caso queira verificar se é possível realizar a expansão da passagem
         else if (opcao == 2) {
-            teste = verificarTamanhoHashTable(tabela);
-
-            // Se as 6 possibilidades de combinações de recursos forem encontradas
-            if (teste == 6) {
-                printf("\n Finalmente foi encontrado os recursos necessarios!!!! \n");
-                printf("\n Desejas expandir a abertura para salvar a galaxia?[Y/N] \n");
-                scanf("%d", escolha);
-                escolha= getchar();
-
-                // Realizar a limpeza da tabela
-                if (escolha == 'Y'){
-                    limparHashTable(tabela);
-                }
-                //
-                else{
-                    imprimirTristeza();
-                    sleep(5);
-                    limparHashTable(tabela);
-                }
-            }
-            else if (teste == 0){
-                printf("\n AINDA NAO E POSSIVEL EXPANDIR \n");
-                sleep(5);
-            }
+            verificarExpansaoPassagem(tabela);
         }
         // Caso queira testar um exemplo de expansão
         else if (opcao == 3) {
-
+            arquivoRecursos(tabela);
         }
         // Caso informe uma opção inválida
         else{
-            printf("CALMA GUERREIRO, SO TEM 3 OPCOES");
+            printf("CALMA GUERREIRO, SO TEM 4 OPCOES");
             sleep(5);
         }
     }
